@@ -1,0 +1,276 @@
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* box-sizing and font sizing */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+
+  /* Set font size for easy rem calculations
+   * default document font size = 16px, 1rem = 16px, 100% = 16px
+   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+  */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+  html {
+    font-size: 60%;
+  }
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+  html {
+    font-size: 58%;
+  }
+}
+
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+  html {
+    font-size: 55%;
+  }
+}
+
+/* Nav Bar */
+#navbar {
+  display:flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #CAEBF2;
+  box-shadow: 0 2px 0 #A9A9A9;
+  z-index: 10;
+}
+
+#nav-list {
+  display: flex;
+  margin-right: 2rem;
+  list-style: none;
+}
+
+@media (max-width: 28.75em) {
+  .nav {
+    justify-content: center;
+  }
+
+  .nav-list {
+    margin: 0 1rem;
+  }
+}
+
+#nav-list a {
+  display: block;
+  font-size: 2.2rem;
+  padding: 2rem;
+  color: #FF3B3F;
+  text-decoration: none;
+}
+
+#nav-list a:hover {
+  color: #CAEBF2;
+  background: #FF3B3F;
+}
+
+/*Welcome/About Section */
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #EFEFEF;
+}
+
+.welcome-title {
+  color: #FF3B3F;
+  font-size: 5.5rem;
+  max-width:640px;
+}
+
+.welcome-photo {
+  border-radius: 50%;
+}
+
+.welcome-message {
+  font-size: 3rem;
+  font-weight: 200;
+  font-style: italic;
+  color: #FF3B3F;
+}
+
+/*Projects Section*/
+#projects {
+  text-align: center;
+  padding: 10rem 2rem;
+  background: #EFEFEF;
+}
+
+.projects-header {
+  color: #FF3B3F;
+  font-size: 4rem;
+  max-width: 640px;
+  margin: 0 auto 6rem auto;
+}
+
+@media (max-width: 28.75em) {
+  .projects-header {
+    font-size: 4rem;
+  }
+}
+
+#projects-grid {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+
+@media (max-width: 30.625em) {
+  #projects {
+    padding: 6rem 1rem;
+  }
+  
+  #projects-grid {
+    grid-template-colums: 1fr;
+  }
+}
+
+.project {
+  background: #CAEBF2;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.project a {
+  color: #FF3B3F;
+}
+
+.project-title {
+  font-size: 2rem;
+  padding: 2rem 0.5rem;
+  color: #FF3B3F;
+}
+
+.project-title:hover {
+  color: #CAEBF2;
+  background: #FF3B3F;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 2px;
+  color: #FF3B3F;
+  text-decoration: none;
+}
+
+.btn-show-all {
+  font-size: 2rem;
+  background: #CAEBF2;
+  transition: background 0.3s ease-out;
+}
+
+.btn-show-all:hover {
+  background: #FF3B3F;
+  color: #CAEBF2;
+}
+
+.btn-show-all:hover > i {
+  transform: translateX(2px);
+}
+
+.btn-show-all > i {
+  margin-left: 10px;
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+}
+
+/*Contact Section */
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 80vh;
+  padding: 0 2rem;
+  background: #EFEFEF;
+}
+
+#contact-header > h2 {
+  font-size: 6rem;
+  color: #FF3B3F;
+}
+
+@media (max-width:28.75em) {
+  #contact-header > h2 {
+    font-size: 4rem;
+  }
+}
+
+#contact-header > p {
+  font-style: italic;
+  color: #FF3B3F;
+  font-size: 3rem;
+}
+
+#contact-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 980px;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+
+.contact-details {
+  font-size: 2.4rem;
+  transition: transform 0.3s ease-out; 
+}
+
+.contact-details:hover {
+  transform: translateY(8px);
+}
+
+/* Footer */
+#footer {
+  background: #CAEBF2;
+  border-top: solid #A9A9A9;
+  font-weight: 300;
+  display: flex;
+  justify-content: space-evenly; 
+  padding: 2rem;
+}
+
+#footer > p {
+  margin: 2rem;
+  color: #FF3B3F;
+  font-size: 2rem;
+}
+
+@media (max-width: 28.75em) {
+  #footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
